@@ -37,6 +37,7 @@ h1.italicized_h1 {
 h2 {
     font-size: 30px;
     font-weight: 600;
+	font-family: serif;
     margin: 60px 0px 10px 0px;
 }
 
@@ -110,6 +111,7 @@ hr {
 }
 
 p {
+	font-size: 18px;
     margin: 15px 0px 20px 0px;
     padding-right: 5px;
 }
@@ -118,7 +120,7 @@ p {
     margin-bottom: 100px;
     width: 90%;
     margin: auto;
-    max-width: 860px;
+    max-width: 960px;
 }
 
 .toc > li {
@@ -126,7 +128,7 @@ p {
 }
 
 .text {
-    font-size: 16px;
+    font-size: 20px;
     text-align: center;
     font-style: italic;
     line-height: 120%;
@@ -143,7 +145,7 @@ p {
     max-width: 250px;
     min-width: 200px;
     flex: 1 1 275px;
-    margin: 10px 10px;
+    margin: 90px 0px;
     position: relative;
 }
 
@@ -187,3 +189,83 @@ p {
   max-height: 100%;
 }
 
+
+
+
+
+.accordion > input[type="checkbox"] {
+  position: absolute;
+  left: -100vw;
+}
+
+.accordion .content {
+  overflow-y: hidden;
+  height: 0;
+  transition: height 0.3s ease;
+}
+
+.accordion > input[type="checkbox"]:checked ~ .content {
+  height: auto;
+  overflow: visible;
+}
+
+.accordion label {
+  display: block;
+}
+
+/*
+ Styling
+*/
+body {
+  font: 16px/1.5em "Overpass", "Open Sans", Helvetica, sans-serif;
+  color: #333;
+  font-weight: 300;
+}
+
+.accordion {
+  margin-bottom: 1em;
+}
+
+.accordion > input[type="checkbox"]:checked ~ .content {
+  padding: 15px;
+  border: 1px solid #e8e8e8;
+  border-top: 0;
+}
+
+.accordion .handle {
+  margin: 0;
+  font-size: 1.125em;
+  line-height: 1.2em;
+}
+
+.accordion label {
+  color: #333;
+  cursor: pointer;
+  font-weight: normal;
+  padding: 15px;
+  background: #e8e8e8;
+}
+
+.accordion label:hover,
+.accordion label:focus {
+  background: #d8d8d8;
+}
+
+.accordion .handle label:before {
+  font-family: 'fontawesome';
+  content: "\f054";
+  display: inline-block;
+  margin-right: 10px;
+  font-size: .58em;
+  line-height: 1.556em;
+  vertical-align: middle;
+}
+
+.accordion > input[type="checkbox"]:checked ~ .handle label:before {
+  content: "\f078";
+}
+
+body {
+  padding-left: 280px;
+  padding-right: 280px;
+}

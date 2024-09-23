@@ -15,101 +15,135 @@
 <body>
 
     <div class='section'>
-        <h1 class="italicized_h2">Complex-bin2bin: A Latency-Flexible Generative Neural Model for Audio Packet Loss Concealment</h1>
+        <h2>Complex-bin2bin: A Latency-Flexible Generative Neural Model for Audio Packet Loss Concealment</h2>
 		
-		<p>This page contains some listening samples to evaluate the performance of <em>complex-bin2bin</em>...</p>
-
+		<p><em>Abstract -</em> Despite the significant advancements in networking technologies, transmission of data packets in real-time, particularly in speech communications, continues to face challenges due to the possibility of data loss. This loss not only compromises sound quality but also diminishes overall intelligibility.
+		In such cases, packet loss concealment (PLC) techniques could help by reconstructing the missing content and restoring the audio quality. This work proposes a novel method, that improves previous time-frequency generative inpainting approaches. Compared to other state-of-the-art methods, our proposed approach has the flexibility to restore lost packets either in real-time at low latency or in offline mode, without the need to retrain the network. Evaluations conducted against two recent state-of-the-art methods, ranked at the top of the 2022 Microsoft PLC competition, and against four DNN-based PLC solutions from the literature, show superior scores in terms of task-specific metrics.
+		The method has also been tested in more challenging scenarios than aforementioned ones, with packet loss rates of up to 50%, showing the ability to help automatic speech recognition (ASR) systems reduce word error rate (WER) by up to almost 50% relative improvement.</p>
+		<hr>
+		<p>Below are some examples of repaired speech sequences, at different loss rates, for Complex-bin2bin and the comparison methods. Next to each audio sample is the magnitude spectrogram of an excerpt, with a binary loss mask (in red) indicating the placement of lost samples as: 0 = non-lost, 1 = lost.</p>
     </div>
 
+	<section class="accordion">
+	  <input type="checkbox" name="collapse" id="handle1" checked="checked">
+	  <h2 class="handle">
+		<label for="handle1">Sample 1 - Loss rate 23.4%</label>
+	  </h2>
+	  
+	  <div class="content">
 
-    <div id='section-1' class='section'>
-
-        <div class='playlist'>
-		    <div class='labeled-audio'><p class='text'>clean (reference)</p>
-                <audio preload='metadata' controls><source src='samples/small_sample_1/clean_S_1.wav' type='audio/mpeg'></audio>
+	    <div class='playlist'>
+		    <div class='labeled-audio'>
+				<p class='text'>Clean (reference)</p>
+                <audio preload='metadata' controls><source src='samples/p232_003/clean/p232_003.wav' type='audio/mpeg'></audio>
             </div>
-		    <div class='labeled-audio'><p class='text'>corrupted</p>
-                <audio preload='metadata' controls><source src='samples/small_sample_1/lossy_S_1.wav' type='audio/mpeg'></audio>
-            </div>
-		    <div class='labeled-audio'><p class='text'>restored</p>
-                <audio preload='metadata' controls><source src='samples/small_sample_1/bin2bin_midi_S_1.wav' type='audio/mpeg'></audio>
-            </div>
+			<div class="image-container">
+				<img src="img/p232_003/clean.png" alt="Clean spectrogram" width="700">
+			</div>
         </div>
-	<hr>
-        <div class='playlist'>
-		    <div class='labeled-audio'><p class='text'>clean (reference)</p>
-                <audio preload='metadata' controls><source src='samples/small_sample_2/clean_S_2.wav'></audio>
+	    <div class='playlist'>
+		    <div class='labeled-audio'>
+				<p class='text'>Lossy</p>
+                <audio preload='metadata' controls><source src='samples/p232_003/lossy/p232_003.wav' type='audio/mpeg'></audio>
             </div>
-		    <div class='labeled-audio'><p class='text'>corrupted</p>
-                <audio preload='metadata' controls><source src='samples/small_sample_2/lossy_S_2.wav' type='audio/mpeg'></audio>
-            </div>
-		    <div class='labeled-audio'><p class='text'>restored</p>
-                <audio preload='metadata' controls><source src='samples/small_sample_2/bin2bin_midi_S_2.wav' type='audio/mpeg'></audio>
-            </div>
+			<div class="image-container">
+				<img src="img/p232_003/lossy.png" alt="Lossy spectrogram" width="700">
+			</div>
+			
         </div>
-	<hr>	
-        <div class='playlist'>
-		    <div class='labeled-audio'><p class='text'>clean (reference)</p>
-                <audio preload='metadata' controls><source src='samples/small_sample_3/clean_S_3.wav' type='audio/mpeg'></audio>
+	    <div class='playlist'>
+		    <div class='labeled-audio'>
+				<p class='text'>bin2bin</p>
+                <audio preload='metadata' controls><source src='samples/p232_003/bin2bin/p232_003.wav' type='audio/mpeg'></audio>
             </div>
-		    <div class='labeled-audio'><p class='text'>corrupted</p>
-                <audio preload='metadata' controls><source src='samples/small_sample_3/lossy_S_3.wav' type='audio/mpeg'></audio>
-            </div>
-		    <div class='labeled-audio'><p class='text'>restored</p>
-                <audio preload='metadata' controls><source src='samples/small_sample_3/bin2bin_midi_S_3.wav' type='audio/mpeg'></audio>
-            </div>
+			<div class="image-container">
+				<img src="img/p232_003/bin2bin.png" alt="bin2bin spectrogram" width="700">
+			</div>
+			
         </div>
-	<hr>	
-        <div class='playlist'>
-		    <div class='labeled-audio'><p class='text'>clean (reference)</p>
-                <audio preload='metadata' controls><source src='samples/small_sample_4/clean_S_4.wav' type='audio/mpeg'></audio>
+	    <div class='playlist'>
+		    <div class='labeled-audio'>
+				<p class='text'>CRNN</p>
+                <audio preload='metadata' controls><source src='samples/p232_003/crnn/p232_003.wav' type='audio/mpeg'></audio>
             </div>
-		    <div class='labeled-audio'><p class='text'>corrupted</p>
-                <audio preload='metadata' controls><source src='samples/small_sample_4/lossy_S_4.wav' type='audio/mpeg'></audio>
-            </div>
-		    <div class='labeled-audio'><p class='text'>restored</p>
-                <audio preload='metadata' controls><source src='samples/small_sample_4/bin2bin_midi_S_4.wav' type='audio/mpeg'></audio>
-            </div>
+			<div class="image-container">
+				<img src="img/p232_003/crnn.png" alt="CRNN spectrogram" width="700">
+			</div>
+			
         </div>
-		
-        <h3>Medium gap (750 ms)</h3>
-        
-        <div class='playlist'>
-		    <div class='labeled-audio'><p class='text'>clean (reference)</p>
-                <audio preload='metadata' controls><source src='samples/medium_sample_1/clean_M_1.wav' type='audio/mpeg'></audio>
+	    <div class='playlist'>
+		    <div class='labeled-audio'>
+				<p class='text'>SEGAN</p>
+                <audio preload='metadata' controls><source src='samples/p232_003/segan/p232_003.wav' type='audio/mpeg'></audio>
             </div>
-		    <div class='labeled-audio'><p class='text'>corrupted</p>
-                <audio preload='metadata' controls><source src='samples/medium_sample_1/lossy_M_1.wav' type='audio/mpeg'></audio>
-            </div>
-		    <div class='labeled-audio'><p class='text'>restored</p>
-                <audio preload='metadata' controls><source src='samples/medium_sample_1/bin2bin_midi_M_1.wav' type='audio/mpeg'></audio>
-            </div>
+			<div class="image-container">
+				<img src="img/p232_003/segan.png" alt="SEGAN spectrogram" width="700">
+			</div>
+			
         </div>
-	<hr>
-        <div class='playlist'>
-		    <div class='labeled-audio'><p class='text'>clean (reference)</p>
-                <audio preload='metadata' controls><source src='samples/medium_sample_2/clean_M_2.wav' type='audio/mpeg'></audio>
+	    <div class='playlist'>
+		    <div class='labeled-audio'>
+				<p class='text'>Wave UNet</p>
+                <audio preload='metadata' controls><source src='samples/p232_003/waveunet/p232_003.wav' type='audio/mpeg'></audio>
             </div>
-		    <div class='labeled-audio'><p class='text'>corrupted</p>
-                <audio preload='metadata' controls><source src='samples/medium_sample_2/lossy_M_2.wav' type='audio/mpeg'></audio>
-            </div>
-		    <div class='labeled-audio'><p class='text'>restored</p>
-                <audio preload='metadata' controls><source src='samples/medium_sample_2/bin2bin_midi_M_2.wav' type='audio/mpeg'></audio>
-            </div>
+			<div class="image-container">
+				<img src="img/p232_003/waveunet.png" alt="Wave UNet spectrogram" width="700">
+			</div>
+			
         </div>
-	<hr>
-        <div class='playlist'>
-		    <div class='labeled-audio'><p class='text'>clean (reference)</p>
-                <audio preload='metadata' controls><source src='samples/medium_sample_3/clean_M_3.wav' type='audio/mpeg'></audio>
+	    <div class='playlist'>
+		    <div class='labeled-audio'>
+				<p class='text'>TFGAN-PLC</p>
+                <audio preload='metadata' controls><source src='samples/p232_003/tfgan/p232_003.wav' type='audio/mpeg'></audio>
             </div>
-		    <div class='labeled-audio'><p class='text'>corrupted</p>
-                <audio preload='metadata' controls><source src='samples/medium_sample_3/lossy_M_3.wav' type='audio/mpeg'></audio>
-            </div>
-		    <div class='labeled-audio'><p class='text'>restored</p>
-                <audio preload='metadata' controls><source src='samples/medium_sample_3/bin2bin_midi_M_3.wav' type='audio/mpeg'></audio>
-            </div>
+			<div class="image-container">
+				<img src="img/p232_003/tfgan.png" alt="TFGAN-PLC spectrogram" width="700">
+			</div>
+			
         </div>
-		
+	    <div class='playlist'>
+		    <div class='labeled-audio'>
+				<p class='text'><b>complex-bin2bin</b></p>
+                <audio preload='metadata' controls><source src='samples/p232_003/cplx_bin2bin/p232_003.wav' type='audio/mpeg'></audio>
+            </div>
+			<div class="image-container">
+				<img src="img/p232_003/cplx_bin2bin.png" alt="complex-bin2bin spectrogram" width="700">
+			</div>
+			
+        </div>
+	  </div>
+	</section>
+	
+	<section class="accordion">
+	  <input type="checkbox" name="collapse2" id="handle2">
+	  <h2 class="handle">
+		<label for="handle2">Sample 2 - Loss rate</label>
+	  </h2>
+	  <div class="content">
+		<p></p>
+	  </div>
+	</section>
+	
+	<section class="accordion">
+	  <input type="checkbox" name="collapse3" id="handle3">
+	  <h2 class="handle">
+		<label for="handle3">Sample 3 - Loss rate</label>
+	  </h2>
+	  <div class="content">
+		<p></p>
+	  </div>
+	</section>
+	<!--
+	<section class="accordion">
+	  <input type="checkbox" name="collapse4" id="handle4">
+	  <h2 class="handle">
+		<label for="handle4">Sample 4 - Loss rate</label>
+	  </h2>
+	  <div class="content">
+		<p></p>
+	  </div>
+	</section>	
+	-->
 	<br>
 	<br>
 	<br>
