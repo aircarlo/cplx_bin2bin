@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>bin2bin Music Signals Inpainting</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <div class='section'>
+        <h1 class="italicized_h2">bin2bin Music Signals Inpainting</h1>
+		
+		<p>This page contains some listening samples to evaluate the performance of <em>bin2bin</em>, a cGAN-based spectrogram inpainting approach, described in: <em>A Score-aware Generative Approach for Music Signals Inpainting</em> - C. Aironi, L. Gabrielli, S. Cornell, S. Squartini (2023)</p>
+
+    </div>
+
+
+    <div id='section-1' class='section'>
+		<h3>Architecture overview</h3>
+        <!-- <h2 class="italicized_h2">Architecture overview</h2> -->
+		
+		<div class="image-container">
+		  <img src="img/b2b_midi.png" alt="Image Description">
+		</div>
+		
+        <p>The <em>bin2bin</em> architecture is composed of a U-Net for CQT spectrogram inpainting (<em>G</em>). Multi-objective loss for training the U-Net is obtained by ensembling a <em>PatchGAN</em> discriminator BCEloss, along with a <em>Spectral Convergence</em> loss <em>L<sub>SC</sub></em>, and the MSE between the true, input-aligned piano roll, and that obtained from a pitch estimation module.</p>
+
+        <h3>Small gap (375 ms)</h3>
+        
+        <div class='playlist'>
+		    <div class='labeled-audio'><p class='text'>clean (reference)</p>
+                <audio preload='metadata' controls><source src='samples/small_sample_1/clean_S_1.wav' type='audio/mpeg'></audio>
+            </div>
+		    <div class='labeled-audio'><p class='text'>corrupted</p>
+                <audio preload='metadata' controls><source src='samples/small_sample_1/lossy_S_1.wav' type='audio/mpeg'></audio>
+            </div>
+		    <div class='labeled-audio'><p class='text'>restored</p>
+                <audio preload='metadata' controls><source src='samples/small_sample_1/bin2bin_midi_S_1.wav' type='audio/mpeg'></audio>
+            </div>
+        </div>
+	<hr>
+        <div class='playlist'>
+		    <div class='labeled-audio'><p class='text'>clean (reference)</p>
+                <audio preload='metadata' controls><source src='samples/small_sample_2/clean_S_2.wav'></audio>
+            </div>
+		    <div class='labeled-audio'><p class='text'>corrupted</p>
+                <audio preload='metadata' controls><source src='samples/small_sample_2/lossy_S_2.wav' type='audio/mpeg'></audio>
+            </div>
+		    <div class='labeled-audio'><p class='text'>restored</p>
+                <audio preload='metadata' controls><source src='samples/small_sample_2/bin2bin_midi_S_2.wav' type='audio/mpeg'></audio>
+            </div>
+        </div>
+	<hr>	
+        <div class='playlist'>
+		    <div class='labeled-audio'><p class='text'>clean (reference)</p>
+                <audio preload='metadata' controls><source src='samples/small_sample_3/clean_S_3.wav' type='audio/mpeg'></audio>
+            </div>
+		    <div class='labeled-audio'><p class='text'>corrupted</p>
+                <audio preload='metadata' controls><source src='samples/small_sample_3/lossy_S_3.wav' type='audio/mpeg'></audio>
+            </div>
+		    <div class='labeled-audio'><p class='text'>restored</p>
+                <audio preload='metadata' controls><source src='samples/small_sample_3/bin2bin_midi_S_3.wav' type='audio/mpeg'></audio>
+            </div>
+        </div>
+	<hr>	
+        <div class='playlist'>
+		    <div class='labeled-audio'><p class='text'>clean (reference)</p>
+                <audio preload='metadata' controls><source src='samples/small_sample_4/clean_S_4.wav' type='audio/mpeg'></audio>
+            </div>
+		    <div class='labeled-audio'><p class='text'>corrupted</p>
+                <audio preload='metadata' controls><source src='samples/small_sample_4/lossy_S_4.wav' type='audio/mpeg'></audio>
+            </div>
+		    <div class='labeled-audio'><p class='text'>restored</p>
+                <audio preload='metadata' controls><source src='samples/small_sample_4/bin2bin_midi_S_4.wav' type='audio/mpeg'></audio>
+            </div>
+        </div>
+		
+        <h3>Medium gap (750 ms)</h3>
+        
+        <div class='playlist'>
+		    <div class='labeled-audio'><p class='text'>clean (reference)</p>
+                <audio preload='metadata' controls><source src='samples/medium_sample_1/clean_M_1.wav' type='audio/mpeg'></audio>
+            </div>
+		    <div class='labeled-audio'><p class='text'>corrupted</p>
+                <audio preload='metadata' controls><source src='samples/medium_sample_1/lossy_M_1.wav' type='audio/mpeg'></audio>
+            </div>
+		    <div class='labeled-audio'><p class='text'>restored</p>
+                <audio preload='metadata' controls><source src='samples/medium_sample_1/bin2bin_midi_M_1.wav' type='audio/mpeg'></audio>
+            </div>
+        </div>
+	<hr>
+        <div class='playlist'>
+		    <div class='labeled-audio'><p class='text'>clean (reference)</p>
+                <audio preload='metadata' controls><source src='samples/medium_sample_2/clean_M_2.wav' type='audio/mpeg'></audio>
+            </div>
+		    <div class='labeled-audio'><p class='text'>corrupted</p>
+                <audio preload='metadata' controls><source src='samples/medium_sample_2/lossy_M_2.wav' type='audio/mpeg'></audio>
+            </div>
+		    <div class='labeled-audio'><p class='text'>restored</p>
+                <audio preload='metadata' controls><source src='samples/medium_sample_2/bin2bin_midi_M_2.wav' type='audio/mpeg'></audio>
+            </div>
+        </div>
+	<hr>
+        <div class='playlist'>
+		    <div class='labeled-audio'><p class='text'>clean (reference)</p>
+                <audio preload='metadata' controls><source src='samples/medium_sample_3/clean_M_3.wav' type='audio/mpeg'></audio>
+            </div>
+		    <div class='labeled-audio'><p class='text'>corrupted</p>
+                <audio preload='metadata' controls><source src='samples/medium_sample_3/lossy_M_3.wav' type='audio/mpeg'></audio>
+            </div>
+		    <div class='labeled-audio'><p class='text'>restored</p>
+                <audio preload='metadata' controls><source src='samples/medium_sample_3/bin2bin_midi_M_3.wav' type='audio/mpeg'></audio>
+            </div>
+        </div>
+		
+	<br>
+	<br>
+	<br>
+		
+<!-- 	<footer>
+		<p>
+			<a href='https://www.versicherungen.at/'>unabhängige Versicherungsmakler</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=2a4d53607659606dd1fe36a37d2bc0f91f8fbef2'></script>
+			<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1111673/t/4"></script>
+			  Author: <a href="mailto:c.aironi@pm.univpm.it">Carlo Aironi</a>
+			<a href="https://github.com/aircarlo/bin2bin_music_inpainting"><img src="img/gh_ico.png" alt="github" width="35" height="35" style="margin: 0 20px 0 20px;"</a>
+		</p>
+	</footer>	 -->
+	<footer>
+		<a href='https://www.versicherungen.at/'>.</a>
+		<script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=2a4d53607659606dd1fe36a37d2bc0f91f8fbef2'></script>
+		<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1111673/t/4"></script>
+		Author: <a href="mailto:c.aironi@staff.univpm.it">Carlo Aironi</a>
+		<a href="https://github.com/aircarlo/"><img src="img/gh_ico.png" alt="github" width="35" height="35" style="margin: 0 20px 0 20px;"</a>
+		</p>
+	</footer>	
+		
+</body>
+</html>
