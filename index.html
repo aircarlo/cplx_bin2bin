@@ -21,7 +21,7 @@
 		In such cases, packet loss concealment (PLC) techniques could help by reconstructing the missing content and restoring the audio quality. This work proposes a novel method, that improves previous time-frequency generative inpainting approaches. Compared to other state-of-the-art methods, our proposed approach has the flexibility to restore lost packets either in real-time at low latency or in offline mode, without the need to retrain the network. Evaluations conducted against two recent state-of-the-art methods, ranked at the top of the 2022 Microsoft PLC competition, and against four DNN-based PLC solutions from the literature, show superior scores in terms of task-specific metrics.
 		The method has also been tested in more challenging scenarios than aforementioned ones, with packet loss rates of up to 50%, showing the ability to help automatic speech recognition (ASR) systems reduce word error rate (WER) by up to almost 50% relative improvement.</p>
 		<hr>
-		<p>Below are some examples of repaired speech sequences, at different loss rates, for Complex-bin2bin and the comparison methods. Next to each audio sample is the magnitude spectrogram of an excerpt, with a binary loss mask (in red) indicating the placement of lost samples as: 0 = non-lost, 1 = lost.</p>
+		<p>Below are some examples of repaired speech sequences, at different loss rates, for complex-bin2bin and the comparison methods. Next to each audio sample is the magnitude spectrogram of an excerpt, with a binary loss mask (in red) indicating the placement of lost samples as: 0 = non-lost, 1 = lost.</p>
     </div>
 
 	<section class="accordion">
@@ -53,7 +53,7 @@
         </div>
 	    <div class='playlist'>
 		    <div class='labeled-audio'>
-				<p class='text'>bin2bin</p>
+				<p class='text'>bin2bin [1]</p>
                 <audio preload='metadata' controls><source src='samples/p232_003/bin2bin/p232_003.wav' type='audio/mpeg'></audio>
             </div>
 			<div class="image-container">
@@ -63,7 +63,7 @@
         </div>
 	    <div class='playlist'>
 		    <div class='labeled-audio'>
-				<p class='text'>CRNN</p>
+				<p class='text'>CRNN [2]</p>
                 <audio preload='metadata' controls><source src='samples/p232_003/crnn/p232_003.wav' type='audio/mpeg'></audio>
             </div>
 			<div class="image-container">
@@ -73,7 +73,7 @@
         </div>
 	    <div class='playlist'>
 		    <div class='labeled-audio'>
-				<p class='text'>SEGAN</p>
+				<p class='text'>SEGAN [3]</p>
                 <audio preload='metadata' controls><source src='samples/p232_003/segan/p232_003.wav' type='audio/mpeg'></audio>
             </div>
 			<div class="image-container">
@@ -83,7 +83,7 @@
         </div>
 	    <div class='playlist'>
 		    <div class='labeled-audio'>
-				<p class='text'>Wave UNet</p>
+				<p class='text'>Wave UNet [4]</p>
                 <audio preload='metadata' controls><source src='samples/p232_003/waveunet/p232_003.wav' type='audio/mpeg'></audio>
             </div>
 			<div class="image-container">
@@ -93,7 +93,7 @@
         </div>
 	    <div class='playlist'>
 		    <div class='labeled-audio'>
-				<p class='text'>TFGAN-PLC</p>
+				<p class='text'>TFGAN-PLC [5]</p>
                 <audio preload='metadata' controls><source src='samples/p232_003/tfgan/p232_003.wav' type='audio/mpeg'></audio>
             </div>
 			<div class="image-container">
@@ -103,7 +103,7 @@
         </div>
 	    <div class='playlist'>
 		    <div class='labeled-audio'>
-				<p class='text'><b>complex-bin2bin</b></p>
+				<p class='text'>complex-bin2bin</p>
                 <audio preload='metadata' controls><source src='samples/p232_003/cplx_bin2bin/p232_003.wav' type='audio/mpeg'></audio>
             </div>
 			<div class="image-container">
@@ -145,6 +145,15 @@
 	</section>	
 	-->
 	<br>
+	<div class="section">
+	<p style="font-size: 14px; text-align: left;">
+		[1] - <br>
+		[2] - <br>
+		[3] - <br>
+		[4] - <br>
+		[5] - <br>
+	</p>
+	</div>
 	<br>
 	<br>
 		

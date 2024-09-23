@@ -130,7 +130,7 @@ p {
 .text {
     font-size: 20px;
     text-align: center;
-    font-style: italic;
+    /*font-style: italic;*/
     line-height: 120%;
 }
 
