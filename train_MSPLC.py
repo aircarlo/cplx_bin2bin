@@ -1,5 +1,5 @@
 """
-Train script for PLCC_2022 dataset only
+Train script for MS-PLC 2022 dataset only
 """
 import os, sys
 import yaml
