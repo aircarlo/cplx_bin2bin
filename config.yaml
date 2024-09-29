@@ -1,0 +1,45 @@
+# global parameters
+NOTE: 'cplx_bin2bin con wrapped-phase loss'
+EXPERIMENT_ID: "099"
+# VCTK data
+VCTK_DIR: "/mnt/sda1/home/caironi/DATA/VCTK/wav48"
+VCTK_META: "/mnt/sda1/home/caironi/DATA/VCTK/speaker-info3.tsv"  # VCTK metadata file
+VCTK_TXT: "/mnt/sda1/home/caironi/DATA/VCTK/txt/"                # VCTK transctiptions
+LOG_PATH: "/mnt/sda1/home/caironi/CPLX_BIN2BIN/logs"
+VAL_MASK_PATH: "/mnt/sda1/home/caironi/DATA/VCTK/val_masks_40/"  
+# TEST_MASK_PATH: "/mnt/sda1/home/caironi/DATA/VCTK/test_masks_40/"      # name must match the lossy rate below
+USE_AUGMENTATIONS: True
+IMG_EVAL_DIR: "evaluation"
+MODEL_CHKPT_DIR: "checkpoints"
+G_LEARNING_RATE: 0.005
+D_LEARNING_RATE: 0.005
+# D_KERNEL_SIZE: [8,2]    # from patchGAN discriminator used in bin2bin
+BATCH_SIZE: 16
+NUM_WORKERS: 0
+N_CRITICS: 10
+SAMPLE_RATE: 16000        # working sr
+VCTK_SAMPLE_RATE: 48000   # native VCTK sr
+MASK_TYPE: "variable"     # variable or fixed
+LOSSY_RATE: 0.4           # desired lossy rate (if MASK_TYPE = 'fixed')
+FFT_SIZE: 512
+FFT_HOP: 64
+FW_STRIDE: 40             # test stride bins (5 bins = 20 ms, 40 bins = 160ms...)
+GLA_ITERS: 16             # Griffin-Lim iterations (only used for validation and test, if mode=FGLA)
+# MultiResolution loss additional terms (see https://github.com/csteinmetz1/auraloss)
+MR_SC: 1.0
+MR_LOG: 1.0
+MR_LIN: 1.0
+MR_PHS: 0.0
+NUM_EPOCHS: 150
+SAVE_MODEL_AT: []         # leave list empty if you don't want to save checkpoints at fixed epochs
+SAVE_IMG_AT: 'all'        # when to save an inpainted example, list or 'all'
+# TCNDENSEUNET main parameters
+TDU_PARAM:
+  in_freqs: 257
+  hid_chans: 16
+  hid_chans_dense: 16
+  ksz_dense: !!python/tuple [3,3]
+  ksz_tcn: 3
+  tcn_repeats: 4
+  tcn_blocks: 3
+  tcn_channels: 384
