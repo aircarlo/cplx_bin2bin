@@ -42,8 +42,9 @@ h2 {
 }
 
 h2.italicized_h2 {
-				   font-style: italic;
-				   font-family: serif;
+	text-align: center;
+	font-style: italic;
+	font-family: serif;
 }
 
 h3 {
